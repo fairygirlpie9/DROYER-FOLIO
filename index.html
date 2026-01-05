@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danielle Royer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'neo-cream': '#FDFBF7',
+              'neo-text': '#1A1A2E',
+              'neo-pink-light': '#FF99C8',
+              'neo-pink-vibrant': '#E05780',
+              'neo-blue-light': '#A2D2FF',
+              'neo-blue-vibrant': '#3A86FF',
+            },
+            fontFamily: {
+              sans: ['"Bricolage Grotesque"', 'sans-serif'],
+            },
+            boxShadow: {
+              'neo': '5px 5px 0px 0px rgba(26,26,46,1)',
+              'neo-sm': '3px 3px 0px 0px rgba(26,26,46,1)',
+              'neo-lg': '8px 8px 0px 0px rgba(26,26,46,1)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #FDFBF7;
+        color: #1A1A2E;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #FDFBF7;
+        border-left: 3px solid #1A1A2E;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #E05780;
+        border: 2px solid #1A1A2E;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #3A86FF;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
