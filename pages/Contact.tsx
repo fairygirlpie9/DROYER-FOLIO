@@ -1,16 +1,50 @@
 import React, { useState } from 'react';
-import NeoCard from '../components/NeoCard';
 import NeoButton from '../components/NeoButton';
 import { EMAIL } from '../constants';
-import { Mail, Copy, Check } from 'lucide-react';
+import { Mail, Copy, Check, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
   const handleCopy = () => {
     navigator.clipboard.writeText(EMAIL);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const encode = (data: any) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formData })
+      });
+      setFormStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error(error);
+      setFormStatus('error');
+    }
   };
 
   return (
@@ -44,26 +78,103 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
-      {/* Visual Form Decorator - Enabled */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-2">
-          <label className="font-bold uppercase text-xs tracking-wider">Name</label>
-          <input type="text" className="w-full h-12 border-2 border-neo-text bg-white rounded-md px-4 font-bold focus:outline-none focus:shadow-neo-sm transition-all" />
+      {/* Netlify Form */}
+      {formStatus === 'success' ? (
+        <div className="bg-neo-pink-light border-2 border-neo-text p-12 rounded-xl text-center space-y-4 shadow-neo animate-in zoom-in-95">
+          <div className="bg-white inline-block p-4 rounded-full border-2 border-neo-text shadow-neo-sm">
+            <Check size={48} className="text-neo-text" />
+          </div>
+          <h2 className="text-3xl font-bold text-neo-text">Message Sent!</h2>
+          <p className="font-medium text-lg">Thank you for reaching out. I'll get back to you shortly.</p>
+          <button 
+            onClick={() => setFormStatus('idle')}
+            className="text-sm font-bold underline hover:text-white transition-colors mt-4"
+          >
+            Send another message
+          </button>
         </div>
-        <div className="space-y-2">
-          <label className="font-bold uppercase text-xs tracking-wider">Subject</label>
-           <input type="text" className="w-full h-12 border-2 border-neo-text bg-white rounded-md px-4 font-bold focus:outline-none focus:shadow-neo-sm transition-all" />
-        </div>
-        <div className="col-span-1 md:col-span-2 space-y-2">
-          <label className="font-bold uppercase text-xs tracking-wider">Message</label>
-           <textarea className="w-full h-32 border-2 border-neo-text bg-white rounded-md p-4 font-bold focus:outline-none focus:shadow-neo-sm transition-all resize-none"></textarea>
-        </div>
-        <div className="col-span-1 md:col-span-2 text-center">
-             <NeoButton variant="primary" size="lg" onClick={() => window.location.href = `mailto:${EMAIL}`}>
-                Send Message
-             </NeoButton>
-        </div>
-      </div>
+      ) : (
+        <form 
+          onSubmit={handleSubmit} 
+          name="contact"
+          data-netlify="true"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          
+          <div className="space-y-2">
+            <label htmlFor="name" className="font-bold uppercase text-xs tracking-wider">Name</label>
+            <input 
+              required
+              id="name"
+              name="name"
+              type="text" 
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full h-12 border-2 border-neo-text bg-white rounded-md px-4 font-bold focus:outline-none focus:shadow-neo-sm transition-all placeholder:font-normal placeholder:text-gray-400" 
+              placeholder="Your Name"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="email" className="font-bold uppercase text-xs tracking-wider">Email</label>
+            <input 
+              required
+              id="email"
+              name="email"
+              type="email" 
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full h-12 border-2 border-neo-text bg-white rounded-md px-4 font-bold focus:outline-none focus:shadow-neo-sm transition-all placeholder:font-normal placeholder:text-gray-400" 
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div className="col-span-1 md:col-span-2 space-y-2">
+            <label htmlFor="subject" className="font-bold uppercase text-xs tracking-wider">Subject</label>
+            <input 
+              required
+              id="subject"
+              name="subject"
+              type="text" 
+              value={formData.subject}
+              onChange={handleChange}
+              className="w-full h-12 border-2 border-neo-text bg-white rounded-md px-4 font-bold focus:outline-none focus:shadow-neo-sm transition-all placeholder:font-normal placeholder:text-gray-400" 
+              placeholder="What's this about?"
+            />
+          </div>
+
+          <div className="col-span-1 md:col-span-2 space-y-2">
+            <label htmlFor="message" className="font-bold uppercase text-xs tracking-wider">Message</label>
+            <textarea 
+              required
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full h-32 border-2 border-neo-text bg-white rounded-md p-4 font-bold focus:outline-none focus:shadow-neo-sm transition-all resize-none placeholder:font-normal placeholder:text-gray-400"
+              placeholder="Tell me about your project..."
+            ></textarea>
+          </div>
+
+          <div className="col-span-1 md:col-span-2 text-center">
+            <NeoButton 
+              type="submit" 
+              variant="primary" 
+              size="lg" 
+              className="w-full md:w-auto min-w-[200px] flex justify-center items-center gap-2"
+              disabled={formStatus === 'submitting'}
+            >
+              {formStatus === 'submitting' ? 'Sending...' : (
+                <>Send Message <Send size={18} /></>
+              )}
+            </NeoButton>
+            {formStatus === 'error' && (
+              <p className="text-red-600 font-bold mt-4">Something went wrong. Please try email instead.</p>
+            )}
+          </div>
+        </form>
+      )}
 
     </div>
   );
