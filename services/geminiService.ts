@@ -3,7 +3,9 @@ import { GoogleGenAI, Chat } from "@google/genai";
 let chatSession: Chat | null = null;
 
 const getAiClient = () => {
-  const apiKey = process.env.API_KEY;
+  // Safety check for process variable to avoid crashes in browser environments
+  const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
+  
   if (!apiKey) {
     console.warn("API_KEY is not defined in process.env");
     return null;
