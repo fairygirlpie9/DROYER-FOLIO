@@ -31,19 +31,16 @@ I utilised a sophisticated AI Tech Stack to create a seamless experience. Custom
     // No live demo link
   },
   {
-    id: 'frankenstein-handheld',
-    title: 'Frankenstein Handheld',
-    category: '3D / Web Game',
-    shortDescription: "A high stakes Frankenstein ritual game using a custom console 3D model, particles, procedural audio, and Kiro. Master the controls to bring the monster to life!",
-    description: `I had wanted to make a 3d playable handset for a while. My inspiration for the Frankenstein Handheld project was a synthesis of two core ideas: the high stakes atmosphere of classic horror, and the satisfying tactile feedback of retro gaming hardware. I wanted to move beyond the traditional 2D game format and place the player directly behind a physical object, a custom console to perform a chaotic, timed ritual. This meant bridging the gap between a detailed 3D environment and quick reaction 2D gameplay.
+    id: 'royerfi',
+    title: 'RoyerFi Digital Jukebox',
+    category: 'Web Audio & AI Music',
+    shortDescription: "A vibrant, neobrutalist digital jukebox featuring AI generated songs. Play tracks, adjust gain/tune with interactive knobs, and experience accessible design.",
+    description: `RoyerFi is a digital jukebox featuring my AI songs made in Suno. The interface is designed using HTML, CSS, and TypeScript to create a lightweight and responsive experience. The style mirrors my portfolio website a vibrant jukebox in a neobrutalist style that is designed to be accessible and friendly.
 
-The Frankenstein Handheld is a browser based ritual simulator disguised as a custom 3D gaming console. Players act as the Mad Scientist, interacting with the console's buttons (D Pad, A/B, Start) and the joystick to follow precise, timed, on screen surgical and electrical prompts. The game runs on a Finite State Machine (FSM) that dictates the ritual phases. Success in stabilising the monster leads to the triumphant "It's Alive!" voice payoff, rising eyebrows and exploding particles, while failure also triggers a chaotic explosion of particles, flashing red eyes, shaking bolts and a game reset.
-
-The project was built as a "chimera" of specialised libraries, all orchestrated by a rigorous TypeScript and FSM architecture. I began by designing the physical console model in Nomad Sculpt and in Blender. This franken.glb model became the persistent, interactive environment, handled entirely by three.js. To enhance the horror theme, I created all 2D assets using Adobe Fresco, dynamically swapped based on the ritual state. The soundscape combines procedural audio generated via Tone.js with custom AI voiceovers from Suno. I used Kiro to implement all of these features and to control the animations.`,
-    imageUrl: 'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/055/438/datas/original.png', 
-    videoUrl: 'https://player.vimeo.com/video/1143134227',
-    technologies: ['Three.js', 'TypeScript', 'Kiro', 'Tone.js', 'Blender', 'HTML', 'CSS'],
-    link: 'https://frankensteinhandheld.netlify.app'
+Users can play and pause songs, toggle autoplay, and interact with the audio directly using custom built knobs to adjust gain and tuning. It also includes direct integration to email me, blending a music player with a personal touch.`,
+    imageUrl: 'https://i.ibb.co/b586NYC5/royerfi.jpg',
+    technologies: ['TypeScript', 'HTML', 'CSS', 'Suno AI'],
+    link: 'https://royerfi.netlify.app/'
   },
   {
     id: 'lux-ops',
@@ -62,16 +59,19 @@ This flexibility is what allowed me to pivot the same core technology across mot
     link: 'https://lux-ops.com/'
   },
   {
-    id: 'royerfi',
-    title: 'RoyerFi Digital Jukebox',
-    category: 'Web Audio & AI Music',
-    shortDescription: "A vibrant, neobrutalist digital jukebox featuring AI generated songs. Play tracks, adjust gain/tune with interactive knobs, and experience accessible design.",
-    description: `RoyerFi is a digital jukebox featuring my AI songs made in Suno. The interface is designed using HTML, CSS, and TypeScript to create a lightweight and responsive experience. The style mirrors my portfolio website a vibrant jukebox in a neobrutalist style that is designed to be accessible and friendly.
+    id: 'frankenstein-handheld',
+    title: 'Frankenstein Handheld',
+    category: '3D / Web Game',
+    shortDescription: "A high stakes Frankenstein ritual game using a custom console 3D model, particles, procedural audio, and Kiro. Master the controls to bring the monster to life!",
+    description: `I had wanted to make a 3d playable handset for a while. My inspiration for the Frankenstein Handheld project was a synthesis of two core ideas: the high stakes atmosphere of classic horror, and the satisfying tactile feedback of retro gaming hardware. I wanted to move beyond the traditional 2D game format and place the player directly behind a physical object, a custom console to perform a chaotic, timed ritual. This meant bridging the gap between a detailed 3D environment and quick reaction 2D gameplay.
 
-Users can play and pause songs, toggle autoplay, and interact with the audio directly using custom built knobs to adjust gain and tuning. It also includes direct integration to email me, blending a music player with a personal touch.`,
-    imageUrl: 'https://i.ibb.co/b586NYC5/royerfi.jpg',
-    technologies: ['TypeScript', 'HTML', 'CSS', 'Suno AI'],
-    link: 'https://royerfi.netlify.app/'
+The Frankenstein Handheld is a browser based ritual simulator disguised as a custom 3D gaming console. Players act as the Mad Scientist, interacting with the console's buttons (D Pad, A/B, Start) and the joystick to follow precise, timed, on screen surgical and electrical prompts. The game runs on a Finite State Machine (FSM) that dictates the ritual phases. Success in stabilising the monster leads to the triumphant "It's Alive!" voice payoff, rising eyebrows and exploding particles, while failure also triggers a chaotic explosion of particles, flashing red eyes, shaking bolts and a game reset.
+
+The project was built as a "chimera" of specialised libraries, all orchestrated by a rigorous TypeScript and FSM architecture. I began by designing the physical console model in Nomad Sculpt and in Blender. This franken.glb model became the persistent, interactive environment, handled entirely by three.js. To enhance the horror theme, I created all 2D assets using Adobe Fresco, dynamically swapped based on the ritual state. The soundscape combines procedural audio generated via Tone.js with custom AI voiceovers from Suno. I used Kiro to implement all of these features and to control the animations.`,
+    imageUrl: 'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/055/438/datas/original.png', 
+    videoUrl: 'https://player.vimeo.com/video/1143134227',
+    technologies: ['Three.js', 'TypeScript', 'Kiro', 'Tone.js', 'Blender', 'HTML', 'CSS'],
+    link: 'https://frankensteinhandheld.netlify.app'
   },
   {
     id: 'fibo-bridge',
