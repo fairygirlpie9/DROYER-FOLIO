@@ -19,20 +19,22 @@ const Projects: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {PROJECTS.map((project, index) => (
           <NeoCard key={project.id} className="flex flex-col h-full group transition-all hover:-translate-y-1 hover:shadow-neo-lg bg-white" noShadow>
-            <div className="relative border-2 border-neo-text mb-6 overflow-hidden aspect-video bg-gray-100 rounded-md">
+            <Link to={`/projects/${project.id}`} className="block relative border-2 border-neo-text mb-6 overflow-hidden aspect-video bg-gray-100 rounded-md cursor-pointer">
               <img 
                 src={project.imageUrl} 
                 alt={project.title} 
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute top-2 right-2 bg-neo-pink-light border-2 border-neo-text p-1 px-3 font-bold text-xs uppercase tracking-wide rounded-full shadow-neo-sm">
+              <div className="absolute top-2 right-2 bg-neo-pink-light border-2 border-neo-text p-1 px-3 font-bold text-xs uppercase tracking-wide rounded-full shadow-neo-sm z-10">
                 {project.category}
               </div>
-            </div>
+            </Link>
 
             <div className="flex-1 flex flex-col">
               <h3 className="text-2xl font-bold mb-2 group-hover:text-neo-blue-vibrant transition-colors">
-                {project.title}
+                <Link to={`/projects/${project.id}`}>
+                  {project.title}
+                </Link>
               </h3>
               <p className="text-base text-gray-600 font-medium mb-6 flex-1">
                 {project.shortDescription || project.description}

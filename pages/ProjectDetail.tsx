@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { PROJECTS } from '../constants';
 import NeoButton from '../components/NeoButton';
-import { ArrowLeft, ExternalLink, Github, X, ZoomIn } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, X, ZoomIn, Trophy } from 'lucide-react';
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -66,6 +66,16 @@ const ProjectDetail: React.FC = () => {
             <h1 className="text-4xl md:text-6xl font-bold leading-none mb-6">
               {project.title}
             </h1>
+
+            {project.award && (
+              <div className="bg-neo-pink-light border-2 border-neo-text p-4 rounded-md shadow-[4px_4px_0px_0px_rgba(26,26,46,1)] mb-6 transform -rotate-1 hover:rotate-0 transition-transform">
+                <p className="font-bold text-lg leading-tight flex items-start gap-3">
+                  <Trophy className="shrink-0 text-neo-text" size={24} strokeWidth={2.5} />
+                  <span>{project.award}</span>
+                </p>
+              </div>
+            )}
+
             <div className="text-lg font-medium text-gray-700 leading-relaxed border-l-4 border-neo-pink-light pl-6 py-1 space-y-4">
               {project.description.split('\n\n').map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>

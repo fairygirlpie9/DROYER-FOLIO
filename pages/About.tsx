@@ -57,7 +57,7 @@ const About: React.FC = () => {
               I am a <strong className="font-bold">Creative Technologist</strong> working in the intersection of design, music and AI.
             </p>
             <p>
-              My background spans <strong className="font-bold">3D Design, VR/AR, and Studio Management</strong>, and I currently leverage these diverse skills to build innovative AI-driven applications and experiences.
+              My background spans <strong className="font-bold">3D Design, VR/AR, and Studio Management</strong>. I also conduct research into <strong className="font-bold">public engagement and audience interaction</strong>, leveraging these diverse skills to build innovative AI driven applications and experiences.
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ const About: React.FC = () => {
                 <span className="bg-neo-text text-white text-sm font-bold px-4 py-2 rounded self-start shrink-0">Current</span>
               </div>
               <ul className="list-disc pl-5 text-gray-700 font-medium space-y-2 text-lg">
-                <li>Building AI-driven apps and dashboards for B2B and B2C markets.</li>
+                <li>Building AI driven apps and dashboards for B2B and B2C markets.</li>
                 <li>Exploring the intersection of generative AI, music composition, and visual design.</li>
               </ul>
           </div>
@@ -90,11 +90,11 @@ const About: React.FC = () => {
                   <h4 className="text-2xl font-bold text-neo-text">Studio Manager (Sculpture, Photo, Computational Arts)</h4>
                   <div className="text-neo-blue-vibrant font-bold text-lg">University of the Arts London (UAL)</div>
                 </div>
-                <span className="bg-neo-text text-white text-sm font-bold px-4 py-2 rounded self-start shrink-0">July 2021 - April 2025</span>
+                <span className="bg-neo-text text-white text-sm font-bold px-4 py-2 rounded self-start shrink-0">July 2021 to April 2025</span>
               </div>
               <ul className="list-disc pl-5 text-gray-700 font-medium space-y-2 text-lg">
                 <li>Managed budgets for 6 courses across 3 departments.</li>
-                <li>Collaborated with cross-functional teams to improve teaching/learning standards.</li>
+                <li>Collaborated with cross functional teams to improve teaching/learning standards.</li>
                 <li>Taught creative software tools including Adobe InDesign, Blender, and Adobe Aero.</li>
               </ul>
           </div>
@@ -106,7 +106,7 @@ const About: React.FC = () => {
                   <h4 className="text-2xl font-bold text-neo-text">Decolonising the Arts Education Fellow</h4>
                   <div className="text-neo-blue-vibrant font-bold text-lg">University of the Arts London (UAL)</div>
                 </div>
-                <span className="bg-gray-200 text-neo-text border border-neo-text text-sm font-bold px-4 py-2 rounded self-start shrink-0">Sep 2023 - Sep 2024</span>
+                <span className="bg-gray-200 text-neo-text border border-neo-text text-sm font-bold px-4 py-2 rounded self-start shrink-0">Sep 2023 to Sep 2024</span>
               </div>
               <ul className="list-disc pl-5 text-gray-700 font-medium space-y-2 text-lg">
                 <li>Led curricular and pedagogic innovation within Design, Teaching and Learning.</li>

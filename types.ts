@@ -9,6 +9,7 @@ export interface Project {
   technologies: string[];
   link?: string;
   sourceUrl?: string;
+  award?: string;
 }
 
 export interface NavItem {

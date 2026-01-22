@@ -17,10 +17,15 @@ const Home: React.FC = () => {
             Danielle <br/>
             <span className="text-neo-pink-vibrant">Royer</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
-            Creative Technologist.<br/>
-            Working at the intersection of design, music, and AI.
-          </p>
+          <div className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium space-y-4">
+            <p className="font-bold text-neo-text">
+               Winner of the 2025 Toyota Racing Development Award for Best in Real Time Analytics.
+            </p>
+            <p>
+              Creative Technologist.<br/>
+              Working at the intersection of design, music, and AI.
+            </p>
+          </div>
           <div className="flex flex-wrap gap-4 pt-4">
             <Link to="/projects">
               <NeoButton size="lg" variant="primary">View Projects</NeoButton>
@@ -36,11 +41,6 @@ const Home: React.FC = () => {
            <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-neo-blue-light rounded-bl-[100px] border-l-2 border-b-2 border-neo-text"></div>
            <div className="absolute bottom-0 left-0 w-2/3 h-1/2 bg-neo-pink-light rounded-tr-[80px] border-t-2 border-r-2 border-neo-text"></div>
            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-neo-pink-vibrant border-2 border-neo-text rounded-full z-10"></div>
-           <div className="absolute inset-0 flex items-center justify-center">
-             <div className="bg-white/90 backdrop-blur border-2 border-neo-text p-4 rotate-2 shadow-neo-sm rounded-lg">
-               <span className="font-bold text-xl tracking-wide">Portfolio '25</span>
-             </div>
-           </div>
         </div>
       </section>
 
