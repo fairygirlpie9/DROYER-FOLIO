@@ -5,6 +5,7 @@ export interface Project {
   description: string;
   shortDescription?: string;
   imageUrl: string;
+  secondaryImageUrl?: string;
   videoUrl?: string;
   technologies: string[];
   link?: string;

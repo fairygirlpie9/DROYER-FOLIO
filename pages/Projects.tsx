@@ -11,8 +11,7 @@ const Projects: React.FC = () => {
       <div className="border-b-2 border-neo-text pb-6">
         <h1 className="text-5xl font-bold mb-4 text-neo-text">Selected Works</h1>
         <p className="text-lg font-medium text-gray-600 max-w-2xl">
-          A collection of digital experiments, client work, and architectural concepts. 
-          Less noise, more signal.
+          A collection of digital experiments, client work, and architectural concepts.
         </p>
       </div>
 

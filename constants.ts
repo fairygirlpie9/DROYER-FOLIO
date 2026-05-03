@@ -59,6 +59,33 @@ This flexibility is what allowed me to pivot the same core technology across mot
     link: 'https://lux-ops.com/'
   },
   {
+    id: 'paperlog',
+    title: 'PaperLog',
+    category: 'Productivity & Tools',
+    shortDescription: "A persistent, minimalist to-do list application designed to emulate the look and feel of a physical notepad.",
+    description: `PaperLog is a persistent, minimalist to-do list application designed to emulate the tactile experience of a physical notepad. Balancing aesthetic charm with robust productivity, it offers daily, weekly, and monthly task views alongside smart features like task rollovers and recurring routines.
+
+Built entirely for the browser using React and TypeScript, PaperLog acts as a perfect on-the-go companion by seamlessly saving data to local storage. To provide a truly personalised feel, the interface allows extensive customisation: users can select plain, lined, or dotted paper textures, opt for crisp white or soft cream backgrounds, and write in blue, green, black, or white digital ink. The inclusion of recurring tasks ensures that daily habits are effortlessly maintained within a beautifully styled digital notebook.`,
+    imageUrl: 'https://i.ibb.co/DDJRwyCQ/Paperlog.png',
+    technologies: ['React', 'TypeScript', 'Lucide', 'Local Storage', 'HTML', 'CSS'],
+    link: 'https://paperlognotes.netlify.app/'
+  },
+  {
+    id: 'waste-radar',
+    title: 'Waste Radar for AWS',
+    category: 'Cloud Architecture & DevOps',
+    shortDescription: "A Jira and Confluence-integrated tool built with Rovo Dev to visualize and automate AWS cloud cost remediation efforts directly within engineering backlogs.",
+    description: `Cloud cost waste is a silent performance killer. Most teams discover overspending weeks too late. I built Waste Radar for AWS to turn cloud hygiene into a team sport. In the "Williams Racing Edition" dashboard, we can see exactly where our cloud spending is leaking from unattached volumes to oversized instances all visualized as high priority findings.
+
+Insight is useless without action. By running a live scan and clicking "Create Tasks", Waste Radar instantly translates these findings into actionable Jira issues. Each task is automatically populated with cost impact, risk levels, and specific technical recommendations. This transforms an empty board into a prioritized remediation backlog. The engineering team can now tackle these optimizations as part of their standard workflow, ensuring no dollar is wasted.
+
+To keep leadership in the loop, Waste Radar automatically generates an executive summary in Confluence. It aggregates the potential savings and links every finding back to the Jira tasks, providing a complete audit trail of the optimization efforts. It is fast, automated, and powered by Rovo helping software teams perform like a finely tuned pit crew.`,
+    imageUrl: 'https://i.ibb.co/V07T3Xmf/thumb.jpg',
+    secondaryImageUrl: 'https://i.ibb.co/1fgz0Pz1/thumb-1.jpg',
+    videoUrl: 'https://player.vimeo.com/video/1148499698?fl=pl&fe=sh',
+    technologies: ['Rovo Dev', 'AWS', 'Jira API', 'Confluence API', 'HTML', 'CSS']
+  },
+  {
     id: 'frankenstein-handheld',
     title: 'Frankenstein Handheld',
     category: '3D / Web Game',
@@ -87,8 +114,7 @@ I engineered the core application using Vanilla JavaScript and TypeScript combin
 One significant hurdle was accurately converting raw 3D vector coordinates from the virtual stage into natural language descriptions that the AI models could interpret correctly as specific lighting styles like Rembrandt or Butterfly lighting.`,
     imageUrl: 'https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/095/023/datas/original.png',
     videoUrl: 'https://player.vimeo.com/video/1146600140',
-    technologies: ['Three.js', 'TypeScript', 'FAL AI', 'BRIA 2.3', 'HTML', 'CSS'],
-    link: '#' 
+    technologies: ['Three.js', 'TypeScript', 'FAL AI', 'BRIA 2.3', 'HTML', 'CSS']
   }
 ];
 

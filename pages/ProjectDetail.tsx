@@ -44,13 +44,13 @@ const ProjectDetail: React.FC = () => {
             </div>
           )}
           
-          {/* Show image as a secondary visual if video exists */}
-          {project.videoUrl && (
+          {/* Show image as a secondary visual if video exists or if secondaryImageUrl is present */}
+          {(project.videoUrl || project.secondaryImageUrl) && (
             <div 
               className="border-2 border-neo-text shadow-neo rounded-lg overflow-hidden opacity-80 hover:opacity-100 transition-opacity cursor-zoom-in relative group"
-              onClick={() => setSelectedImage(project.imageUrl)}
+              onClick={() => setSelectedImage(project.secondaryImageUrl || project.imageUrl)}
             >
-               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+               <img src={project.secondaryImageUrl || project.imageUrl} alt={project.title} className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-500" />
                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                   <ZoomIn className="text-white drop-shadow-md" size={32} />
                </div>
@@ -117,11 +117,11 @@ const ProjectDetail: React.FC = () => {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 backdrop-blur-sm p-4 animate-in fade-in duration-200"
           onClick={() => setSelectedImage(null)}
         >
           <button 
-            className="absolute top-6 right-6 text-white hover:text-neo-pink-vibrant transition-colors z-50 bg-black/50 rounded-full p-2"
+            className="absolute top-6 right-6 text-neo-text hover:text-neo-pink-vibrant transition-colors z-50 bg-white border-2 border-neo-text shadow-neo-sm rounded-full p-2"
             onClick={() => setSelectedImage(null)}
           >
             <X size={32} />
@@ -129,7 +129,7 @@ const ProjectDetail: React.FC = () => {
           <img 
             src={selectedImage} 
             alt="Full screen view" 
-            className="max-w-full max-h-[90vh] object-contain rounded-md border-2 border-white shadow-neo animate-in zoom-in-95 duration-300"
+            className="max-w-full max-h-[90vh] object-contain rounded-md border-2 border-neo-text bg-white shadow-neo animate-in zoom-in-95 duration-300"
             onClick={(e) => e.stopPropagation()} 
           />
         </div>
